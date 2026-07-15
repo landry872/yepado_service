@@ -38,7 +38,7 @@ export default function Contact() {
         <div data-reveal="" data-delay="120" data-stack="" style={css("opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);display:grid;grid-template-columns:.82fr 1.18fr;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 50px 100px -46px rgba(50,52,138,.5);border:1px solid rgba(50,52,138,.1)")}>
           <div style={css("position:relative;padding:clamp(36px,4vw,52px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:#26285F")}>
             <video src="/assets/videos/contact-meeting.mp4" autoPlay muted loop playsInline style={css("position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0")}></video>
-            <div style={css("position:absolute;inset:0;background:linear-gradient(165deg,rgba(61,64,168,.62),rgba(38,40,95,.68));z-index:1")}></div>
+            <div style={css("position:absolute;inset:0;background:linear-gradient(165deg,rgba(61,64,168,.78),rgba(38,40,95,.82));z-index:1")}></div>
             <div style={css("position:relative;z-index:2")}>
               <div style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-size:clamp(22px,2vw,27px);font-weight:600;color:#fff;line-height:1.2;margin-bottom:14px;text-shadow:0 1px 12px rgba(0,0,0,.3);letter-spacing:-0.03em")}>Parlons de votre expansion.</div>
               <p style={css("font-size:14px;line-height:1.6;color:rgba(255,255,255,.82);margin:0 0 40px;max-width:280px;text-shadow:0 1px 10px rgba(0,0,0,.3)")}>Notre équipe basée à Abidjan vous répond sous 48h ouvrées.</p>
@@ -100,7 +100,7 @@ export default function Contact() {
                   {errors.message && <span style={css("display:block;font-size:11.5px;color:#C0392B;margin-top:6px")}>{errors.message}</span>}
                 </label>
                 <input name="yn_website" type="text" value={form.yn_website} onChange={handleChange} tabIndex="-1" autoComplete="off" aria-hidden="true" style={css("position:absolute;left:-9999px;width:0;height:0;opacity:0")} />
-                <button type="submit" className="yn-submit-btn" style={css("width:100%;margin-top:24px;padding:16px;background:#32348A;color:#FAFAF8;font-size:15px;font-weight:600;border:none;border-radius:100px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;transition:background .3s,transform .3s")}>Envoyer ma demande <span>→</span></button>
+                <button type="submit" className="yn-submit-btn" style={css("width:100%;margin-top:24px;padding:16px;background:#32348A;color:#FAFAF8;font-size:15px;font-weight:600;border:none;border-radius:100px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s")}>Envoyer ma demande</button>
                 <p style={css("font-size:11.5px;color:#9A9AAd;text-align:center;margin:14px 0 0;line-height:1.5")}>Protégé contre le spam. Vos données restent confidentielles.</p>
               </form>
             ) : (

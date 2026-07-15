@@ -16,9 +16,9 @@ export default function Nav({ onHamburgerClick }) {
         </nav>
 
         <div style={css("display:flex;align-items:center;gap:14px")}>
-          <a id="yn-nav-cta" className="yn-nav-cta" href="#contact" data-nav="#contact" style={css("pointer-events:auto;display:inline-flex;align-items:center;gap:14px;padding:8px 8px 8px 26px;background:#32348A;color:#FAFAF8;font-size:15px;font-weight:500;border-radius:100px;box-shadow:0 14px 34px -14px rgba(50,52,138,.8);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,background .3s")}>
+          <a id="yn-nav-cta" className="yn-nav-cta" href="#contact" data-nav="#contact" style={css("pointer-events:auto;display:inline-flex;align-items:center;gap:10px;padding:6px 6px 6px 18px;background:#32348A;color:#FAFAF8;font-size:14px;font-weight:500;border-radius:100px;box-shadow:0 14px 34px -14px rgba(50,52,138,.8);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,background .3s")}>
             Nous contacter
-            <span className="yn-cta-arrow" style={css("width:42px;height:42px;border-radius:50%;background:#FAFAF8;color:#32348A;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .35s cubic-bezier(.22,1,.36,1)")}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17 17 7M8 7h9v9"></path></svg></span>
+            <span className="yn-cta-arrow" style={css("width:32px;height:32px;border-radius:50%;background:#FAFAF8;color:#32348A;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .35s cubic-bezier(.22,1,.36,1)")}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17 17 7M8 7h9v9"></path></svg></span>
           </a>
           <button id="yn-hamburger" onClick={onHamburgerClick} aria-label="Menu" style={css("display:none;width:46px;height:46px;border:1px solid rgba(26,26,26,.14);background:rgba(255,255,255,.7);border-radius:12px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px")}>
             <span style={css("width:20px;height:1.6px;background:#1A1A1A;border-radius:2px")}></span>
