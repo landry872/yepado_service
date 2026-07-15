@@ -55,16 +55,16 @@ export default function Hero() {
 
       <div style={css("position:relative;z-index:2;width:100%;max-width:1560px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;padding:clamp(120px,15vh,160px) clamp(26px,4vw,64px) clamp(40px,5vh,68px);pointer-events:none")}>
 
-        <div style={css("max-width:820px")}>
+        <div style={css("max-width:980px")}>
           <h1 data-hero-h1="" style={css("font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(44px,5.7vw,90px);line-height:0.8;letter-spacing:-0.079em;margin:0;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.4);animation:ynRise .9s cubic-bezier(.22,1,.36,1) .08s both")}>
             Votre porte d'entrée<br />vers les marchés Africains.<br />
           </h1>
           <p style={css("font-size:clamp(15px,1.35vw,18px);line-height:1.25;color:rgba(255,255,255,.85);max-width:562px;margin:24px 0 0;text-shadow:0 1px 16px rgba(0,0,0,.45);animation:ynRise .9s cubic-bezier(.22,1,.36,1) .18s both;font-weight:400")}>Interlocuteur local unique des entreprises internationales — nous transformons la complexité des marchés africains en opportunités concrètes, de la Côte d'Ivoire à l'Afrique Centrale.</p>
         </div>
         <div style={css("display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:clamp(38px,5vh,58px);animation:ynFade 1s ease .4s both")}>
-          <a href="#services" data-nav="#services" className="yn-hero-cta" style={css("pointer-events:auto;display:inline-flex;align-items:center;gap:14px;padding:8px 8px 8px 28px;background:#32348A;color:#FAFAF8;font-size:15px;font-weight:500;border-radius:100px;box-shadow:0 14px 34px -14px rgba(50,52,138,.8);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,background .3s")}>
+          <a href="#contact" data-nav="#contact" className="yn-hero-cta" style={css("pointer-events:auto;display:inline-flex;align-items:center;gap:14px;padding:8px 8px 8px 28px;background:#32348A;color:#FAFAF8;font-size:15px;font-weight:500;border-radius:100px;box-shadow:0 14px 34px -14px rgba(50,52,138,.8);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,background .3s")}>
             Démarrer maintenant
-            <span style={css("width:42px;height:42px;border-radius:50%;background:#FAFAF8;color:#32348A;display:flex;align-items:center;justify-content:center;flex:none")}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17 17 7M8 7h9v9"></path></svg></span>
+            <span className="yn-cta-arrow" style={css("width:42px;height:42px;border-radius:50%;background:#FAFAF8;color:#32348A;display:flex;align-items:center;justify-content:center;flex:none;transition:transform .35s cubic-bezier(.22,1,.36,1)")}><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17 17 7M8 7h9v9"></path></svg></span>
           </a>
         </div>
         <button

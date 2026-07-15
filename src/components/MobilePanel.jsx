@@ -18,7 +18,7 @@ export default function MobilePanel({ open, onClose }) {
         <a href="#marches" data-nav="#marches" className="yn-mobile-link" style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-size:clamp(22px,6.5vw,34px);color:#1A1A1A;padding:9px 0;border-bottom:1px solid rgba(26,26,26,.08)")}>Marchés</a>
         <a href="#contact" data-nav="#contact" className="yn-mobile-link" style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-size:clamp(22px,6.5vw,34px);color:#1A1A1A;padding:9px 0;border-bottom:1px solid rgba(26,26,26,.08)")}>Contact</a>
       </nav>
-      <a href="#contact" data-nav="#contact" className="yn-mobile-link" style={css("margin-top:24px;display:flex;align-items:center;justify-content:center;gap:9px;padding:17px;background:#32348A;color:#FAFAF8;font-size:15px;font-weight:500;border-radius:100px;flex:none")}>Nous contacter <span style={css("color:#A9ABEC")}>→</span></a>
+      <a href="#contact" data-nav="#contact" className="yn-mobile-link" style={css("margin-top:auto;display:flex;align-items:center;justify-content:center;gap:9px;padding:17px;background:#32348A;color:#FAFAF8;font-size:15px;font-weight:500;border-radius:100px;flex:none")}>Nous contacter <span style={css("color:#A9ABEC")}>→</span></a>
     </div>
   );
 }

@@ -49,6 +49,18 @@ input:focus,textarea:focus,select:focus{outline:none}
 .yn-footer-link:hover{color:#FAFAF8}
 .yn-legal-link:hover{color:#A9ABEC}
 
+/* nav link hover + active-section micro-interactions */
+.yn-navlink::after{content:'';position:absolute;left:16px;right:16px;bottom:5px;height:2px;background:currentColor;border-radius:2px;opacity:.9;transform:scaleX(0);transform-origin:center;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.yn-navlink:hover{background:rgba(128,128,144,.14)}
+.yn-navlink:hover::after{transform:scaleX(1)}
+.yn-navlink[data-active="1"]{font-weight:600}
+.yn-navlink[data-active="1"]::after{transform:scaleX(1)}
+
+/* CTA arrow rotates from diagonal (up-right) to horizontal on hover */
+.yn-cta-arrow{transform:rotate(0deg)}
+.yn-hero-cta:hover .yn-cta-arrow,
+.yn-svc-cta:hover .yn-cta-arrow{transform:rotate(45deg)}
+
 .yn-hidden{display:none!important}
 
 /* prevent long unbreakable words (e.g. "D'accompagnement") from forcing grid tracks wider than the viewport */
@@ -63,7 +75,7 @@ input:focus,textarea:focus,select:focus{outline:none}
   [data-stack]{grid-template-columns:1fr!important}
   [data-pad]{padding-left:26px!important;padding-right:26px!important}
   [data-hero-h1]{font-size:clamp(48px,13vw,74px)!important}
-  .yn-globe-wrap{width:min(560px,100%)!important}
+  .yn-globe-wrap{width:min(560px,100%)!important;margin-right:0!important}
   .yn-market-grid{gap:10px!important}
 }
 

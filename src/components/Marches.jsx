@@ -37,8 +37,8 @@ export default function Marches() {
               ))}
             </div>
           </div>
-          <div data-reveal="" data-delay="140" style={css("opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1);display:flex;justify-content:center;align-items:center")}>
-            <div className="yn-globe-wrap" style={css("position:relative;width:min(760px,118%);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center")}>
+          <div data-reveal="" data-delay="140" style={css("opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1);display:flex;justify-content:flex-end;align-items:center;overflow:visible")}>
+            <div className="yn-globe-wrap" style={css("position:relative;width:min(880px,145%);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;margin-right:clamp(-60px,-6vw,-10px)")}>
               <div className="yn-globe-inner" style={css("position:relative;width:100%;aspect-ratio:1/1")}>
                 <div style={css("position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 42% 38%,rgba(255,255,255,.16),transparent 64%);filter:blur(6px);pointer-events:none")}></div>
                 <img src="/assets/globe.png" alt="Globe" style={css("position:relative;width:100%;height:100%;object-fit:contain")} />

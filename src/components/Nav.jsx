@@ -9,10 +9,10 @@ export default function Nav({ onHamburgerClick }) {
         </a>
 
         <nav id="yn-navlinks" style={css("display:flex;align-items:center;gap:6px")}>
-          <a href="#a-propos" data-nav="#a-propos" data-navlink="" style={css("padding:10px 16px;font-size:14px;font-weight:500;color:#fff;border-radius:10px;transition:background .2s,color .3s")}>À propos</a>
-          <a href="#services" data-nav="#services" data-navlink="" style={css("padding:10px 16px;font-size:14px;font-weight:500;color:#fff;border-radius:10px;transition:background .2s,color .3s")}>Services</a>
-          <a href="#approche" data-nav="#approche" data-navlink="" style={css("padding:10px 16px;font-size:14px;font-weight:500;color:#fff;border-radius:10px;transition:background .2s,color .3s")}>Approche</a>
-          <a href="#marches" data-nav="#marches" data-navlink="" style={css("padding:10px 16px;font-size:14px;font-weight:500;color:#fff;border-radius:10px;transition:background .2s,color .3s")}>Marchés</a>
+          <a href="#a-propos" data-nav="#a-propos" data-navlink="" className="yn-navlink" style={css("position:relative;padding:10px 16px;font-size:14px;font-weight:500;color:#fff;border-radius:10px;transition:background .2s,color .3s")}>À propos</a>
+          <a href="#services" data-nav="#services" data-navlink="" className="yn-navlink" style={css("position:relative;padding:10px 16px;font-size:14px;font-weight:500;color:#fff;border-radius:10px;transition:background .2s,color .3s")}>Services</a>
+          <a href="#approche" data-nav="#approche" data-navlink="" className="yn-navlink" style={css("position:relative;padding:10px 16px;font-size:14px;font-weight:500;color:#fff;border-radius:10px;transition:background .2s,color .3s")}>Approche</a>
+          <a href="#marches" data-nav="#marches" data-navlink="" className="yn-navlink" style={css("position:relative;padding:10px 16px;font-size:14px;font-weight:500;color:#fff;border-radius:10px;transition:background .2s,color .3s")}>Marchés</a>
         </nav>
 
         <div style={css("display:flex;align-items:center;gap:14px")}>
