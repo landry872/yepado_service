@@ -2,46 +2,61 @@ import { useEffect, useRef, useState } from 'react';
 import { css } from '../utils/style.js';
 
 const SLIDES = [
-  { country: "Côte d'Ivoire", desc: "Abidjan, cœur économique et hub logistique de l'Afrique de l'Ouest.", alt: "Photo — Côte d'Ivoire" },
-  { country: 'Sénégal', desc: "Dakar, porte atlantique et carrefour d'affaires de la sous-région ouest-africaine.", alt: 'Photo — Sénégal' },
-  { country: 'Cameroun', desc: "Douala, poumon industriel et portuaire de l'Afrique Centrale.", alt: 'Photo — Cameroun' },
-  { country: 'RD Congo', desc: 'Kinshasa, marché de plus de 100 millions de consommateurs.', alt: 'Photo — RD Congo' },
+  { country: "Côte d'Ivoire", desc: "Abidjan, cœur économique et hub logistique de l'Afrique de l'Ouest.", video: '/assets/videos/cote-divoire.mp4', poster: '/assets/videos/poster-cote-divoire.jpg', duration: 16 },
+  { country: 'Sénégal', desc: "Dakar, porte atlantique et carrefour d'affaires de la sous-région ouest-africaine.", video: '/assets/videos/senegal.mp4', poster: '/assets/videos/poster-senegal.jpg', duration: 22.4 },
+  { country: 'RD Congo', desc: 'Kinshasa, marché de plus de 100 millions de consommateurs.', video: '/assets/videos/rd-congo.mp4', poster: '/assets/videos/poster-rd-congo.jpg', duration: 22.2 },
+  { country: 'Cameroun', desc: "Douala, poumon industriel et portuaire de l'Afrique Centrale.", video: '/assets/videos/cameroun.mp4', poster: '/assets/videos/poster-cameroun.jpg', duration: 13.1 },
 ];
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
   const [progKey, setProgKey] = useState(0);
   const timerRef = useRef(null);
+  const videoRefs = useRef([]);
 
   const goTo = (i) => {
-    clearInterval(timerRef.current);
+    clearTimeout(timerRef.current);
     setIndex(i);
     setProgKey((k) => k + 1);
-    timerRef.current = setInterval(() => {
-      setIndex((prev) => (prev + 1) % SLIDES.length);
-      setProgKey((k) => k + 1);
-    }, 6500);
   };
 
   useEffect(() => {
-    timerRef.current = setInterval(() => {
+    const duration = SLIDES[index].duration;
+    timerRef.current = setTimeout(() => {
       setIndex((prev) => (prev + 1) % SLIDES.length);
       setProgKey((k) => k + 1);
-    }, 6500);
-    return () => clearInterval(timerRef.current);
-  }, []);
+    }, duration * 1000);
+    return () => clearTimeout(timerRef.current);
+  }, [index]);
+
+  useEffect(() => {
+    videoRefs.current.forEach((v, i) => {
+      if (!v) return;
+      if (i === index) { v.currentTime = 0; v.play().catch(() => {}); }
+      else v.pause();
+    });
+  }, [index]);
 
   const next = SLIDES[(index + 1) % SLIDES.length];
+  const current = SLIDES[index];
 
   return (
     <section id="accueil" style={css("position:relative;min-height:100vh;display:flex;overflow:hidden;background:#0e0e18")}>
       <div style={css("position:absolute;inset:0;z-index:0;overflow:hidden")}>
         {SLIDES.map((s, i) => (
-          <img
+          <video
             key={i}
+            ref={(el) => (videoRefs.current[i] = el)}
             data-hero-layer=""
-            src="/assets/hero-image.png"
-            alt={s.alt}
+            src={s.video}
+            poster={s.poster}
+            muted
+            playsInline
+            loop
+            autoPlay={i === 0}
+            preload={Math.abs(i - index) <= 1 ? 'auto' : 'none'}
+            onCanPlay={(e) => { if (i === index && e.target.paused) e.target.play().catch(() => {}); }}
+            aria-label={'Vidéo — ' + s.country}
             style={{
               ...css("position:absolute;inset:0;width:100%;height:100%;object-fit:cover"),
               opacity: i === index ? 1 : 0,
@@ -77,7 +92,7 @@ export default function Hero() {
             {SLIDES.map((s, i) => (
               <img
                 key={i}
-                src="/assets/hero-image.png"
+                src={s.poster}
                 alt={'Miniature — ' + s.country}
                 style={{ ...css("position:absolute;inset:0;width:100%;height:100%;object-fit:cover"), opacity: i === (index + 1) % SLIDES.length ? 1 : 0 }}
               />
@@ -91,7 +106,7 @@ export default function Hero() {
             <span style={css("display:-webkit-box;font-size:14px;line-height:1.35;color:rgba(255,255,255,.74);-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden")}>{next.desc}</span>
           </span>
           <span style={css("position:absolute;left:14px;right:14px;bottom:6px;height:2px;background:rgba(255,255,255,.16);border-radius:2px;overflow:hidden")}>
-            <span key={progKey} style={css("display:block;height:100%;width:100%;background:#fff;transform-origin:left;animation:ynProg 6.5s linear infinite")}></span>
+            <span key={progKey} style={{ ...css("display:block;height:100%;width:100%;background:#fff;transform-origin:left"), animation: `ynProg ${current.duration}s linear` }}></span>
           </span>
         </button>
       </div>
