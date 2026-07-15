@@ -32,14 +32,14 @@ export default function Contact() {
       <div style={css("max-width:1180px;margin:0 auto;position:relative")}>
         <div data-reveal="" style={css("opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1);text-align:center;margin:0 auto 52px")}>
           <div style={css("display:inline-flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:2.6px;color:#A9ABEC;margin-bottom:22px")}><span style={css("width:26px;height:1px;background:#A9ABEC")}></span>CONTACT</div>
-          <h2 style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-weight:500;font-size:clamp(40px,4.6vw,62px);line-height:0.95;letter-spacing:-3px;margin:0;color:#1A1A1A")}>Vous avez un projet en&nbsp;<span style={{ color: 'rgb(50,52,138)' }}>Afrique&nbsp;?</span></h2>
+          <h2 style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-weight:500;font-size:clamp(40px,4.6vw,62px);line-height:0.95;letter-spacing:-0.048em;margin:0;color:#1A1A1A")}>Vous avez un projet en&nbsp;<span style={{ color: 'rgb(50,52,138)' }}>Afrique&nbsp;?</span></h2>
           <p style={css("font-size:16.5px;line-height:1.7;color:#5a5a68;margin:22px auto 0;max-width:500px")}>Parlons-en. Un premier échange confidentiel suffit pour cadrer votre implantation et évaluer les opportunités.</p>
         </div>
 
         <div data-reveal="" data-delay="120" data-stack="" style={css("opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);display:grid;grid-template-columns:.82fr 1.18fr;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 50px 100px -46px rgba(50,52,138,.5);border:1px solid rgba(50,52,138,.1)")}>
           <div style={css("position:relative;padding:clamp(36px,4vw,52px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:linear-gradient(165deg,#3D40A8,#26285F)")}>
             <div style={css("position:relative;z-index:2")}>
-              <div style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-size:clamp(22px,2vw,27px);font-weight:600;color:#fff;line-height:1.2;margin-bottom:14px;text-shadow:0 1px 12px rgba(0,0,0,.3);letter-spacing:-0.8px")}>Parlons de votre expansion.</div>
+              <div style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-size:clamp(22px,2vw,27px);font-weight:600;color:#fff;line-height:1.2;margin-bottom:14px;text-shadow:0 1px 12px rgba(0,0,0,.3);letter-spacing:-0.03em")}>Parlons de votre expansion.</div>
               <p style={css("font-size:14px;line-height:1.6;color:rgba(255,255,255,.82);margin:0 0 40px;max-width:280px;text-shadow:0 1px 10px rgba(0,0,0,.3)")}>Notre équipe basée à Abidjan vous répond sous 48h ouvrées.</p>
             </div>
             <div style={css("position:relative;z-index:2;display:flex;flex-direction:column;gap:22px")}>
@@ -61,9 +61,9 @@ export default function Contact() {
           <div style={css("padding:clamp(36px,4vw,52px)")}>
             {!submitted ? (
               <form onSubmit={handleSubmit} noValidate>
-                <div style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-size:24px;font-weight:600;color:#1A1A1A;margin-bottom:6px;letter-spacing:-1px")}>Écrivez-nous</div>
+                <div style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-size:24px;font-weight:600;color:#1A1A1A;margin-bottom:6px;letter-spacing:-0.042em")}>Écrivez-nous</div>
                 <p style={css("font-size:13.5px;color:#6B6B7E;margin:0 0 26px")}>Champs marqués d'un <span style={{ color: '#32348A' }}>*</span> requis.</p>
-                <div style={css("display:grid;grid-template-columns:1fr 1fr;gap:16px")}>
+                <div className="yn-form-row" style={css("display:grid;grid-template-columns:1fr 1fr;gap:16px")}>
                   <label style={{ display: 'block' }}>
                     <span style={css("display:block;font-size:12px;color:#6B6B7E;margin-bottom:8px;letter-spacing:.4px")}>Nom <span style={{ color: '#32348A' }}>*</span></span>
                     <input name="nom" type="text" value={form.nom} onChange={handleChange} placeholder="Ex : Jean Clément" style={css("width:100%;padding:14px 16px;background:#F7F6FB;border:1px solid rgba(50,52,138,.16);border-radius:13px;color:#1A1A1A;font-size:14.5px")} />
@@ -75,7 +75,7 @@ export default function Contact() {
                     {errors.societe && <span style={css("display:block;font-size:11.5px;color:#C0392B;margin-top:6px")}>{errors.societe}</span>}
                   </label>
                 </div>
-                <div style={css("display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px")}>
+                <div className="yn-form-row" style={css("display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px")}>
                   <label style={{ display: 'block' }}>
                     <span style={css("display:block;font-size:12px;color:#6B6B7E;margin-bottom:8px;letter-spacing:.4px")}>Email <span style={{ color: '#32348A' }}>*</span></span>
                     <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="jean@societe.com" style={css("width:100%;padding:14px 16px;background:#F7F6FB;border:1px solid rgba(50,52,138,.16);border-radius:13px;color:#1A1A1A;font-size:14.5px")} />

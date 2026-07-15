@@ -56,7 +56,7 @@ export default function Hero() {
       <div style={css("position:relative;z-index:2;width:100%;max-width:1560px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;padding:clamp(120px,15vh,160px) clamp(26px,4vw,64px) clamp(40px,5vh,68px);pointer-events:none")}>
 
         <div style={css("max-width:820px")}>
-          <h1 data-hero-h1="" style={css("font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(44px,5.7vw,90px);line-height:0.8;letter-spacing:-7.1px;margin:0;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.4);animation:ynRise .9s cubic-bezier(.22,1,.36,1) .08s both")}>
+          <h1 data-hero-h1="" style={css("font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(44px,5.7vw,90px);line-height:0.8;letter-spacing:-0.079em;margin:0;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.4);animation:ynRise .9s cubic-bezier(.22,1,.36,1) .08s both")}>
             Votre porte d'entrée<br />vers les marchés Africains.<br />
           </h1>
           <p style={css("font-size:clamp(15px,1.35vw,18px);line-height:1.25;color:rgba(255,255,255,.85);max-width:562px;margin:24px 0 0;text-shadow:0 1px 16px rgba(0,0,0,.45);animation:ynRise .9s cubic-bezier(.22,1,.36,1) .18s both;font-weight:400")}>Interlocuteur local unique des entreprises internationales — nous transformons la complexité des marchés africains en opportunités concrètes, de la Côte d'Ivoire à l'Afrique Centrale.</p>

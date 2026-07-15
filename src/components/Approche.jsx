@@ -79,9 +79,9 @@ export default function Approche() {
         <div data-pad="" style={css("max-width:1560px;width:100%;margin:0 auto;padding:0 40px;position:relative")}>
           <div style={css("max-width:760px;margin-bottom:clamp(28px,4vh,44px)")}>
             <div style={css("display:inline-flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:2.6px;color:#32348A;margin-bottom:18px")}><span style={css("width:26px;height:1px;background:#32348A")}></span>NOTRE APPROCHE</div>
-            <h2 style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-weight:500;font-size:clamp(34px,4vw,56px);line-height:0.85;letter-spacing:-3px;margin:0;color:#1A1A1A")}>Une méthode en <span style={{ color: '#32348A' }}>quatre temps.</span></h2>
+            <h2 style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-weight:500;font-size:clamp(34px,4vw,56px);line-height:0.85;letter-spacing:-0.054em;margin:0;color:#1A1A1A")}>Une méthode en <span style={{ color: '#32348A' }}>quatre temps.</span></h2>
           </div>
-          <div style={css("position:relative;max-width:660px;margin-bottom:clamp(26px,4vh,44px)")}>
+          <div className="yn-approach-progress" style={css("position:relative;max-width:660px;margin-bottom:clamp(26px,4vh,44px)")}>
             <div style={css("position:relative;display:flex;align-items:center")}>
               {STEPS.map((s, i) => (
                 <Fragment key={i}>
@@ -103,15 +103,13 @@ export default function Approche() {
             <div id="yn-hprogress-note" style={css("font-size:12.5px;color:#8C8EC6;margin-bottom:16px;letter-spacing:.3px;padding-left:6px")}>Faites défiler pour parcourir les étapes →</div>
             <div id="yn-approach-htrack" style={css("display:flex;gap:clamp(22px,2.6vw,38px);padding:48px 9vw 52px 46px;will-change:transform;transition:transform .12s linear")}>
               {STEP_CONTENT.map((s, i) => (
-                <article key={s.title} data-hstep="" style={{
-                  ...css("flex:none;width:min(620px,86vw);align-self:stretch;display:grid;grid-template-columns:1fr clamp(150px,17vw,210px);gap:clamp(20px,2.4vw,36px);align-items:center;background:#fff;border:1px solid rgba(50,52,138,.12);border-radius:26px;padding:clamp(32px,3vw,48px);box-shadow:0 30px 66px -40px rgba(50,52,138,.55);position:relative;overflow:hidden;transition:opacity .35s ease,transform .35s ease"),
+                <article key={s.title} className="yn-step-card" data-hstep="" style={{
+                  ...css("flex:none;width:min(620px,86vw);align-self:stretch;display:grid;grid-template-columns:1fr clamp(150px,17vw,210px);grid-template-areas:'num icon' 'title icon' 'desc icon';gap:clamp(20px,2.4vw,36px);align-items:center;background:#fff;border:1px solid rgba(50,52,138,.12);border-radius:26px;padding:clamp(32px,3vw,48px);box-shadow:0 30px 66px -40px rgba(50,52,138,.55);position:relative;overflow:hidden;transition:opacity .35s ease,transform .35s ease"),
                 }}>
-                  <div style={css("display:flex;flex-direction:column")}>
-                    <span data-hstep-num="" style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-size:clamp(38px,3.8vw,54px);font-weight:700;color:#32348A;line-height:.9;letter-spacing:-2px;margin-bottom:clamp(22px,3vw,40px)")}>{STEPS[i].num}</span>
-                    <h3 style={{ ...css("font-family:'Space Grotesk','Just Sans',sans-serif;font-size:clamp(24px,2.5vw,34px);font-weight:600;color:#1A1A1A;margin:0 0 14px;letter-spacing:-1px"), lineHeight: s.lh }}>{s.title}</h3>
-                    <p style={css("font-size:clamp(14px,1.2vw,16.5px);line-height:1.7;color:#5a5a68;margin:0")}>{s.desc}</p>
-                  </div>
-                  <div style={css("position:relative;height:180px;display:flex;align-items:center;justify-content:center")}>
+                  <span data-hstep-num="" style={{ ...css("font-family:'Space Grotesk','Just Sans',sans-serif;font-size:clamp(38px,3.8vw,54px);font-weight:700;color:#32348A;line-height:.9;letter-spacing:-0.037em"), gridArea: 'num' }}>{STEPS[i].num}</span>
+                  <h3 style={{ ...css("font-family:'Space Grotesk','Just Sans',sans-serif;font-size:clamp(24px,2.5vw,34px);font-weight:600;color:#1A1A1A;margin:0;letter-spacing:-0.029em"), lineHeight: s.lh, gridArea: 'title' }}>{s.title}</h3>
+                  <p style={{ ...css("font-size:clamp(14px,1.2vw,16.5px);line-height:1.7;color:#5a5a68;margin:0"), gridArea: 'desc' }}>{s.desc}</p>
+                  <div className="yn-step-icon" style={{ ...css("position:relative;height:180px;display:flex;align-items:center;justify-content:center"), gridArea: 'icon' }}>
                     <StepIcon n={i} />
                   </div>
                 </article>
