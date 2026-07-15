@@ -209,7 +209,14 @@ export default function App() {
     const scrollToSel = (sel) => {
       const el = document.querySelector(sel);
       if (!el) return;
-      const top = el.getBoundingClientRect().top + window.scrollY - 78;
+      const rect = el.getBoundingClientRect();
+      let top;
+      if (sel === '#contact') {
+        // center the contact section in the viewport instead of top-aligning it
+        top = rect.top + window.scrollY - Math.max(0, (window.innerHeight - rect.height) / 2);
+      } else {
+        top = rect.top + window.scrollY - 78;
+      }
       window.scrollTo({ top, behavior: 'smooth' });
     };
     const navClickHandlers = [];

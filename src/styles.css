@@ -49,20 +49,57 @@ input:focus,textarea:focus,select:focus{outline:none}
 .yn-footer-link:hover{color:#FAFAF8}
 .yn-legal-link:hover{color:#A9ABEC}
 
+/* nav link hover + active-section micro-interactions */
+.yn-navlink::after{content:'';position:absolute;left:16px;right:16px;bottom:5px;height:2px;background:currentColor;border-radius:2px;opacity:.9;transform:scaleX(0);transform-origin:center;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.yn-navlink:hover{background:rgba(128,128,144,.14)}
+.yn-navlink:hover::after{transform:scaleX(1)}
+.yn-navlink[data-active="1"]{font-weight:600}
+.yn-navlink[data-active="1"]::after{transform:scaleX(1)}
+
+/* CTA arrow rotates from diagonal (up-right) to horizontal on hover */
+.yn-cta-arrow{transform:rotate(0deg)}
+.yn-hero-cta:hover .yn-cta-arrow,
+.yn-svc-cta:hover .yn-cta-arrow{transform:rotate(45deg)}
+
 .yn-hidden{display:none!important}
 
+/* prevent long unbreakable words (e.g. "D'accompagnement") from forcing grid tracks wider than the viewport */
+.yn-chiffre-cell{min-width:0}
+.yn-chiffre-label{overflow-wrap:break-word;word-break:break-word}
+
+/* ---------- tablet ---------- */
 @media(max-width:980px){
   #yn-navlinks{display:none!important}
   #yn-nav-cta{display:none!important}
   #yn-hamburger{display:flex!important}
-  #yn-hero-grid{grid-template-columns:1fr!important;gap:56px!important}
-  #yn-hero-visual{min-height:380px!important}
   [data-stack]{grid-template-columns:1fr!important}
   [data-pad]{padding-left:26px!important;padding-right:26px!important}
   [data-hero-h1]{font-size:clamp(48px,13vw,74px)!important}
+  .yn-globe-wrap{width:min(560px,100%)!important;margin-right:0!important}
+  .yn-market-grid{gap:10px!important}
 }
-@media(max-width:620px){
-  [data-approach-track]{grid-template-columns:1fr!important}
-  [data-footer-grid]{grid-template-columns:1fr 1fr!important}
-  [data-chiffres]{grid-template-columns:repeat(2,1fr)!important;gap:24px 0!important}
+
+/* ---------- mobile ---------- */
+@media(max-width:640px){
+  [data-footer-grid]{grid-template-columns:1fr!important;gap:36px!important}
+  [data-chiffres]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:0!important}
+  .yn-chiffre-cell{padding:20px 14px!important;border-right:1px solid rgba(50,52,138,.14)!important;border-bottom:1px solid rgba(50,52,138,.14);text-align:center}
+  .yn-chiffre-cell:nth-child(2n){border-right:none!important}
+  .yn-chiffre-cell:nth-child(n+3){border-bottom:none}
+  .yn-market-grid{grid-template-columns:1fr!important}
+  .yn-form-row{grid-template-columns:1fr!important}
+  .yn-hero-next{left:16px!important;right:16px!important;width:auto!important;bottom:20px!important}
+  .yn-spy-col{display:none!important}
+  #marches{padding-top:70px!important;padding-bottom:0!important}
+  .yn-globe-wrap{aspect-ratio:3/2!important;overflow:hidden!important;align-items:flex-start!important}
+  .yn-market-card{min-height:76px}
+  .yn-approach-progress{display:none!important}
+  .yn-step-card{grid-template-columns:1fr!important;grid-template-areas:'num' 'icon' 'title' 'desc'!important;gap:14px!important;text-align:center}
+  .yn-step-icon{height:130px!important}
+}
+
+/* ---------- small phones ---------- */
+@media(max-width:420px){
+  [data-pad]{padding-left:18px!important;padding-right:18px!important}
+  [data-chiffres]{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;padding-top:22px!important}
 }

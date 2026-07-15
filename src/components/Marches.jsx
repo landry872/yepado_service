@@ -16,9 +16,9 @@ export default function Marches() {
         <div data-stack="" style={css("display:grid;grid-template-columns:1fr 1.12fr;gap:60px;align-items:center")}>
           <div data-reveal="" style={css("opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)")}>
             <div style={css("display:inline-flex;align-items:center;gap:10px;font-size:11.5px;font-weight:600;letter-spacing:2.6px;color:rgba(255,255,255,.7);margin-bottom:24px")}><span style={css("width:26px;height:1px;background:rgba(255,255,255,.6)")}></span>MARCHÉS D'INTERVENTION</div>
-            <h2 style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-weight:500;font-size:clamp(38px,4.4vw,60px);line-height:0.81;letter-spacing:-3px;margin:0;color:#fff")}>Présents là où<br />votre croissance se joue.</h2>
+            <h2 style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-weight:500;font-size:clamp(38px,4.4vw,60px);line-height:0.81;letter-spacing:-0.05em;margin:0;color:#fff")}>Présents là où<br />votre croissance se joue.</h2>
             <p style={css("font-size:16.5px;line-height:1.7;color:rgba(255,255,255,.72);margin:24px 0 34px;max-width:460px")}>Cinq pays prioritaires, deux sous-régions, un seul point d'entrée. De l'Afrique de l'Ouest à l'Afrique Centrale, nous rapprochons vos ambitions du terrain.</p>
-            <div style={css("display:grid;grid-template-columns:1fr 1fr;gap:12px")}>
+            <div className="yn-market-grid" style={css("display:grid;grid-template-columns:1fr 1fr;gap:12px")}>
               {COUNTRIES.map((c) => (
                 <div key={c.name} className="yn-market-card" style={css("display:flex;align-items:center;gap:15px;padding:16px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;transition:background .3s,transform .3s,border-color .3s")}>
                   <span style={{ ...css("flex:none;width:46px;height:31px;border-radius:5px;overflow:hidden;position:relative"), background: c.flag }}>
@@ -37,10 +37,12 @@ export default function Marches() {
               ))}
             </div>
           </div>
-          <div data-reveal="" data-delay="140" style={css("opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1);display:flex;justify-content:center;align-items:center")}>
-            <div style={css("position:relative;width:min(760px,118%);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center")}>
-              <div style={css("position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 42% 38%,rgba(255,255,255,.16),transparent 64%);filter:blur(6px);pointer-events:none")}></div>
-              <img src="/assets/globe.png" alt="Globe" style={css("position:relative;width:100%;height:100%;object-fit:contain")} />
+          <div data-reveal="" data-delay="140" style={css("opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1);display:flex;justify-content:flex-end;align-items:center;overflow:visible")}>
+            <div className="yn-globe-wrap" style={css("position:relative;width:min(880px,145%);aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;margin-right:clamp(-60px,-6vw,-10px)")}>
+              <div className="yn-globe-inner" style={css("position:relative;width:100%;aspect-ratio:1/1")}>
+                <div style={css("position:absolute;inset:12%;border-radius:50%;background:radial-gradient(circle at 42% 38%,rgba(255,255,255,.16),transparent 64%);filter:blur(6px);pointer-events:none")}></div>
+                <img src="/assets/globe.png" alt="Globe" style={css("position:relative;width:100%;height:100%;object-fit:contain")} />
+              </div>
             </div>
           </div>
         </div>
