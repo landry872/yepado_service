@@ -36,6 +36,34 @@ input:focus,textarea:focus,select:focus{outline:none}
 
 #yn-mobile-panel{display:none}
 
+/* ---------- Safari/iOS scroll-performance hints ---------- */
+/* Promote scroll-driven elements to their own compositing layer ahead of
+   time so Safari doesn't pop/flicker the first time it has to composite
+   them once scrolling starts. */
+#yn-nav,
+#yn-progress,
+#yn-approach-htrack,
+[data-hstep],
+[data-svc-card] > div,
+.yn-globe-wrap,
+[data-hero-layer]{
+  will-change:transform;
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+  -webkit-transform:translateZ(0);
+  transform:translateZ(0);
+}
+/* Safari has a known bug where a `position:sticky` ancestor combined with
+   `overflow:hidden` and per-frame transformed children can flicker/jitter
+   during scroll; forcing the sticky wrapper onto its own layer avoids it. */
+[data-approche-sec] > div,
+[data-svc-card]{
+  -webkit-transform:translateZ(0);
+  transform:translateZ(0);
+}
+[data-reveal]{will-change:opacity,transform}
+#yn-mobile-panel{-webkit-overflow-scrolling:touch}
+
 /* ---------- hover states (replace design-tool style-hover) ---------- */
 .yn-nav-cta:hover,
 .yn-hero-cta:hover,
