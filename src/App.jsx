@@ -75,8 +75,8 @@ export default function App() {
           nav.style.padding = '22px 0';
           if (inner) { inner.style.background = 'transparent'; inner.style.backdropFilter = 'none'; inner.style.webkitBackdropFilter = 'none'; inner.style.boxShadow = 'none'; inner.style.borderColor = 'transparent'; }
         }
-        if (y > 400 && y > lastY) nav.style.transform = 'translateY(-130%)';
-        else nav.style.transform = 'translateY(0)';
+        if (y > 400 && y > lastY) nav.style.transform = 'translateY(-130%) translateZ(0)';
+        else nav.style.transform = 'translateY(0) translateZ(0)';
         const overHero = y <= 40;
         if (logoImg) logoImg.src = overHero ? '/assets/yepado-logo-white.svg' : '/assets/yepado-logo.svg';
         navLinks.forEach((l) => {
@@ -95,7 +95,7 @@ export default function App() {
         const scrollable = asec.offsetHeight - window.innerHeight;
         const p = Math.max(0, Math.min(1, -rect.top / (scrollable || 1)));
         const maxShift = Math.max(0, track.scrollWidth - track.parentElement.clientWidth);
-        track.style.transform = 'translateX(' + (-maxShift * p).toFixed(1) + 'px)';
+        track.style.transform = 'translateX(' + (-maxShift * p).toFixed(1) + 'px) translateZ(0)';
         const dots = document.querySelectorAll('[data-hdot]');
         const n = dots.length;
         const segs = document.querySelectorAll('[data-hconn]');
@@ -126,7 +126,7 @@ export default function App() {
           const dist = Math.abs(mid - cx) / (window.innerWidth * 0.9);
           const k = Math.max(0, 1 - dist);
           c.style.opacity = Math.max(0.72, 1 - dist * 0.45).toFixed(3);
-          c.style.transform = 'scale(' + (0.98 + 0.02 * k).toFixed(3) + ')';
+          c.style.transform = 'scale(' + (0.98 + 0.02 * k).toFixed(3) + ') translateZ(0)';
         });
         const note = document.getElementById('yn-hprogress-note');
         if (note) note.style.opacity = p > 0.02 ? '0' : '1';
@@ -136,12 +136,12 @@ export default function App() {
       svcCards.forEach((c, i) => {
         const innerEl = c.firstElementChild; if (!innerEl) return;
         const nx = svcCards[i + 1];
-        if (!nx) { innerEl.style.transform = 'none'; innerEl.style.opacity = '1'; return; }
+        if (!nx) { innerEl.style.transform = 'translateZ(0)'; innerEl.style.opacity = '1'; return; }
         const hgt = innerEl.offsetHeight || 1;
         const pin = 94 + i * 10;
         const dist = nx.getBoundingClientRect().top - pin;
         const pp = 1 - Math.min(1, Math.max(0, dist / hgt));
-        innerEl.style.transform = 'scale(' + (1 - 0.05 * pp).toFixed(4) + ')';
+        innerEl.style.transform = 'scale(' + (1 - 0.05 * pp).toFixed(4) + ') translateZ(0)';
         innerEl.style.opacity = (1 - 0.5 * pp).toFixed(3);
       });
 
@@ -165,7 +165,16 @@ export default function App() {
       }
       lastY = y;
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
+    // Throttle to one pass per animation frame — Safari/iOS fires many more
+    // 'scroll' events per second than it can actually paint, so running the
+    // full read/write pass on every single event causes layout thrash that
+    // shows up as a flicker/shudder right as scrolling starts.
+    let rafId = null;
+    const onScrollThrottled = () => {
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => { rafId = null; onScroll(); });
+    };
+    window.addEventListener('scroll', onScrollThrottled, { passive: true });
     onScroll();
 
     checkReveal();
@@ -231,8 +240,9 @@ export default function App() {
     });
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('scroll', onScrollThrottled);
       window.removeEventListener('resize', checkReveal);
+      if (rafId !== null) cancelAnimationFrame(rafId);
       revealTimers.forEach(clearTimeout);
       clearTimeout(safetyTimer);
       sio.disconnect();
