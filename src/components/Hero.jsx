@@ -6,6 +6,7 @@ const SLIDES = [
   { country: 'Sénégal', desc: "Dakar, porte atlantique et carrefour d'affaires de la sous-région ouest-africaine.", video: '/assets/videos/senegal.mp4', poster: '/assets/videos/poster-senegal.jpg', duration: 22.4 },
   { country: 'RD Congo', desc: 'Kinshasa, marché de plus de 100 millions de consommateurs.', video: '/assets/videos/rd-congo.mp4', poster: '/assets/videos/poster-rd-congo.jpg', duration: 22.2 },
   { country: 'Cameroun', desc: "Douala, poumon industriel et portuaire de l'Afrique Centrale.", video: '/assets/videos/cameroun.mp4', poster: '/assets/videos/poster-cameroun.jpg', duration: 13.1 },
+  { country: 'Bénin', desc: 'Cotonou, principal port et poumon économique du Bénin.', video: '/assets/videos/benin.mp4', poster: '/assets/videos/poster-benin.jpg', duration: 12.9 },
 ];
 
 export default function Hero() {
