@@ -38,7 +38,7 @@ export default function Contact() {
         <div data-reveal="" data-delay="120" data-stack="" style={css("opacity:0;transform:translateY(30px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1);display:grid;grid-template-columns:.82fr 1.18fr;background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 50px 100px -46px rgba(50,52,138,.5);border:1px solid rgba(50,52,138,.1)")}>
           <div style={css("position:relative;padding:clamp(36px,4vw,52px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:#26285F")}>
             <video src="/assets/videos/contact-meeting.mp4" autoPlay muted loop playsInline style={css("position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0")}></video>
-            <div style={css("position:absolute;inset:0;background:linear-gradient(165deg,rgba(61,64,168,.78),rgba(38,40,95,.82));z-index:1")}></div>
+            <div style={css("position:absolute;inset:0;background:linear-gradient(165deg,rgba(61,64,168,.89),rgba(38,40,95,.91));z-index:1")}></div>
             <div style={css("position:relative;z-index:2")}>
               <div style={css("font-family:'Space Grotesk','Just Sans',sans-serif;font-size:clamp(22px,2vw,27px);font-weight:600;color:#fff;line-height:1.2;margin-bottom:14px;text-shadow:0 1px 12px rgba(0,0,0,.3);letter-spacing:-0.03em")}>Parlons de votre expansion.</div>
               <p style={css("font-size:14px;line-height:1.6;color:rgba(255,255,255,.82);margin:0 0 40px;max-width:280px;text-shadow:0 1px 10px rgba(0,0,0,.3)")}>Notre équipe basée à Abidjan vous répond sous 48h ouvrées.</p>
