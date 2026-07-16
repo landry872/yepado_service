@@ -97,8 +97,9 @@ input:focus,textarea:focus,select:focus{outline:none}
   .yn-globe-wrap{aspect-ratio:3/2!important;overflow:hidden!important;align-items:flex-start!important}
   .yn-market-card{min-height:76px}
   .yn-approach-progress{display:none!important}
-  .yn-step-card{grid-template-columns:1fr!important;grid-template-areas:'num' 'icon' 'title' 'desc'!important;gap:14px!important;text-align:center}
+  .yn-step-card{grid-template-columns:1fr!important;grid-template-areas:'icon' 'title' 'desc'!important;gap:14px!important;text-align:center}
   .yn-step-icon{height:130px!important}
+  [data-hstep-num]{display:none!important}
 }
 
 /* ---------- small phones ---------- */
