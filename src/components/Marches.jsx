@@ -3,7 +3,7 @@ import { css } from '../utils/style.js';
 const COUNTRIES = [
   { name: "Côte d'Ivoire", sub: 'Hub régional · Abidjan', flag: 'linear-gradient(90deg,#F77F00 0 33.33%,#fff 33.33% 66.66%,#009E60 66.66% 100%)', badge: 'HUB' },
   { name: 'Sénégal', sub: "Afrique de l'Ouest", flag: 'linear-gradient(90deg,#00853F 0 33.33%,#FDEF42 33.33% 66.66%,#E31B23 66.66% 100%)', star: '#00853F' },
-  { name: 'Mali', sub: "Afrique de l'Ouest", flag: 'linear-gradient(90deg,#14B53A 0 33.33%,#FCD116 33.33% 66.66%,#CE1126 66.66% 100%)' },
+  { name: 'Bénin', sub: "Afrique de l'Ouest", flag: 'linear-gradient(to bottom,#FCD116 0 50%,#E8112D 50% 100%)', band: '#008751', bandWidth: '38%' },
   { name: 'Cameroun', sub: 'Afrique Centrale', flag: 'linear-gradient(90deg,#007A5E 0 33.33%,#CE1126 33.33% 66.66%,#FCD116 66.66% 100%)', star: '#FCD116' },
   { name: 'RD Congo', sub: 'Afrique Centrale', flag: 'linear-gradient(120deg,#007FFF 0 40%,#CE1021 40% 44%,#F7D618 44% 56%,#CE1021 56% 60%,#007FFF 60% 100%)', star: '#F7D618', starTopLeft: true },
 ];
@@ -22,6 +22,7 @@ export default function Marches() {
               {COUNTRIES.map((c) => (
                 <div key={c.name} className="yn-market-card" style={css("display:flex;align-items:center;gap:15px;padding:16px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;transition:background .3s,transform .3s,border-color .3s")}>
                   <span style={{ ...css("flex:none;width:46px;height:31px;border-radius:5px;overflow:hidden;position:relative"), background: c.flag }}>
+                    {c.band && <span style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: c.bandWidth, background: c.band }}></span>}
                     {c.star && (
                       <span style={c.starTopLeft
                         ? { position: 'absolute', left: '5px', top: '2px', color: c.star, fontSize: '12px', lineHeight: 1 }
