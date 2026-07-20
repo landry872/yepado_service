@@ -50,7 +50,7 @@ export default function Contact() {
               </a>
               <div style={css("display:flex;align-items:center;gap:15px;color:#fff;text-decoration:none")}>
                 <span style={css("flex:none;width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:#fff")}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
-                <span><span style={css("display:block;font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.6px")}>ADRESSE</span><span style={css("display:block;font-size:15px;font-weight:500;margin-top:2px")}>Plateau, Abidjan — Côte d'Ivoire</span></span>
+                <span><span style={css("display:block;font-size:11px;color:rgba(255,255,255,.6);letter-spacing:.6px")}>ADRESSE</span><span style={css("display:block;font-size:15px;font-weight:500;margin-top:2px")}>Cocody Centre, face Eglise Saint-Jean, Abidjan — Côte d'Ivoire</span></span>
               </div>
             </div>
           </div>
